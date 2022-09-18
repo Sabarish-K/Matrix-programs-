@@ -36,7 +36,7 @@ int main()
       for(int j=0;j<b;j++)
         {
          scanf("%d",&m[i][j]);
-		     }
+        }
      }
 		int s=(a%2==0)?a/2:(a/2)+1;
 		int s1=(b%2==0)?b/2:(b/2)+1;
