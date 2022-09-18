@@ -1,0 +1,41 @@
+print the given pattern 
+ 
+input 1:
+omega 
+a * o * a 
+* g m g *
+o m e g a
+* m g m *
+o * a * o
+
+input 2:
+killer
+r * * k * r
+* e * i e *
+* * l l * *
+k i l l e r
+* i * e i *
+k * * r * k
+
+program :
+include<stdio.h>
+#include<string.h>
+int main()
+{
+char str[102];
+scanf("%s",str);
+int len=strlen(str);
+for(int i=0;i<len;i++) {
+    for(int j=0;j<len;j++) {
+        if(j==len/2)
+            printf("%c",str[i]);
+        else if(i==len/2)
+            printf("%c",str[j]);
+        else if(i==j || j==len-1-i)
+            printf("%c",str[len-i-1]);
+        else
+            printf("*");
+    }
+    printf("\n");
+}
+}
