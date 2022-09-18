@@ -1,0 +1,52 @@
+An integer matrix of size R rows and C column and consisting of integer values are passed as input.The program must print the maximun value of the L sum
+
+let us consider the 4*4 matrix
+1 2 3 4
+5 6 7 8
+9 1 0 2
+3 4 5 0
+
+all possible L shapes in the matrix are
+1    2    3
+5 6  6 7  7 8
+
+5    6    7
+9 1  1 0  0 2
+
+9    1    0
+3 4  4 5  5 0
+the maximum sum 18 is obtained from the L values 3 7 8 (3+7+8=18)
+so 18 is printed as output
+
+program:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x,y,m=0,sum;
+    scanf("%d %d",&x,&y);
+    
+    int a[x][y];
+    
+    for(int i=0;i<x;i++)
+    {
+        for(int j=0;j<y;j++)
+        {
+            scanf("%d ",&a[i][j]);
+        }
+    }
+    for(int i=0;i<(x-1);i++)
+    {
+        for(int j=0;j<(y-1);j++)
+        {
+            sum=a[i][j]+a[i+1][j]+a[i+1][j+1];
+            
+            if(sum>m)
+            {
+                m=sum;
+            }
+        }
+    }
+    printf("%d",m);
+}
